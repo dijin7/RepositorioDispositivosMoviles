@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,8 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: 100,
               height: 100,
-              child: Image.asset(
-                'assets/images/victoria.jpg',
+              child: SvgPicture.asset(
+                'assets/images/victoria.svg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 100,
               height: 100,
               child: Image.asset(
-                'assets/images/derrota.jpg',
+                'assets/images/derrota.svg',
                fit: BoxFit.cover,
               ),
             ),
@@ -125,9 +126,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Row(children: [
-              ElevatedButton(onPressed: _incrementCounter, child: Text('Aumento')),
-              ElevatedButton(onPressed: _lessCounter, child: Text('Disminuir')),
-              ElevatedButton(onPressed: _resetCounter, child: Text('Reset')),
+              ElevatedButton(onPressed: _incrementCounter, child: const Text('Aumento')),
+              ElevatedButton(onPressed: _lessCounter, child: const Text('Disminuir')),
+              ElevatedButton(onPressed: _resetCounter, child: const Text('Reset')),
             ],)
 
 
