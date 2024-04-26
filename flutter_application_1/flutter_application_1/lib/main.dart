@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 100,
               child: Image.asset(
                 'assets/images/derrota.jpg',
-                fit: BoxFit.cover,
+               fit: BoxFit.cover,
               ),
             ),
 
