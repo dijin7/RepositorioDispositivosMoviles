@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'pages/detail.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,18 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Appi Flutter'),
+
+
+      
+      routes:{
+        //'/': (context) => MyHomePage(title: 'wa',),
+        '/pages/detail': (context) => NewPage(),
+      }
+
+
     );
+
+
   }
 }
 
@@ -77,6 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
+
+
+
+
       body: Center(
         child: Card(
         elevation: 20,
@@ -85,8 +102,16 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(15.0),
         child: Column(
           
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //const ElevatedButton(onPressed: (){Navigator.pushNamed(context, '/pages/detail');},);
+             ElevatedButton(
+              onPressed: () {
+                  Navigator.pushNamed(context,'/pages/detail');
+                }, 
+                child: Text("Wa")
+              ),
             if(_counter==15)
             const Text(
               'Victoria',
