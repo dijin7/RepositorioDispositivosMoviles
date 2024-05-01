@@ -92,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Victoria',
             ),
 
+          /*
             if(_counter==15)
             SizedBox(
               width: 100,
@@ -106,11 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: 100,
               height: 100,
-              child: Image.asset(
+              child: SvgPicture.asset(
                 'assets/images/derrota.svg',
                fit: BoxFit.cover,
               ),
-            ),
+            ),*/
 
             if(_counter==10)
             const Text(
