@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:flutter_svg/flutter_svg.dart';
 import 'pages/detail.dart';
 import 'pages/list.dart';
@@ -76,8 +79,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
       _counter*2;
     });
+    }
 
-  }
+    Widget Addimage(){
+      if(_counter >= 15){
+        return SvgPicture.asset('assets/images/victoria.svg');
+      }else if(_counter >= 10 && _counter <= 14){
+        return SvgPicture.asset('assets/images/derrota.svg');
+      }else if(_counter < 10){
+        return Text('  ');
+      }
+
+      return Text('mensaje error');
+    }
+
+  
   @override
   Widget build(BuildContext context) {
 
@@ -160,32 +176,21 @@ class _MyHomePageState extends State<MyHomePage> {
              ),
              
               
+            
+            
+            Container(
+              width: 100,
+              height: 100,
+              alignment: Alignment.bottomRight,  
+              child: Addimage(),
+              ),
 
             if(_counter==15)
             const Text(
               'Victoria',
             ),
 
-          /*
-            if(_counter==15)
-            Container(
-              width: 100,
-              height: 100,
-              child: SvgPicture.asset(
-                'assets/images/victoria.svg',
-                fit: BoxFit.cover,
-              ),
-            ),
-
-            if(_counter==10)
-            Container(
-              width: 100,
-              height: 100,
-              child: Image.asset(
-                'assets/images/derrota.jpg',
-               fit: BoxFit.cover,
-              ),
-            ),*/
+          
 
             if(_counter==10)
             const Text(
