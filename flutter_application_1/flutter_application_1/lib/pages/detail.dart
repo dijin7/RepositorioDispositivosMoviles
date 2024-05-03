@@ -7,13 +7,37 @@ class NewPage extends StatelessWidget{
       return Scaffold(
         appBar: AppBar
           (title: Text
-            ('Hola, soy nueva pagina'),
+            ('Detail'),
           ),
-        body: Center
-          (
-            child: Text(' Contenido '),
-          ),
+        body: Center(    
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            const Text(
+              'Aquí esta toda la información de detalles',
+            ),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [       
+              Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
 
+                ),
+              alignment: Alignment.bottomRight,  
+              child: ElevatedButton(
+                onPressed: () {
+                    Navigator.pushNamed(context,'/main');
+                  }, 
+                  child: Text("Volver")
+                ),
+              ),
+              ],
+             ),
+          ],
+          ),
+      ),
       );
 
   }

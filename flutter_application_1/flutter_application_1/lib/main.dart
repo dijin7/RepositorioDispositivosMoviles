@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+//import 'package:flutter_svg/flutter_svg.dart';
 import 'pages/detail.dart';
+import 'pages/list.dart';
 
 
 void main() {
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
       routes:{
         //'/': (context) => MyHomePage(title: 'wa',),
         '/pages/detail': (context) => NewPage(),
-      }
+        '/pages/list':(context) => List(),
+        '/main':(context) => MyApp(),
+      } 
 
 
     );
@@ -96,22 +99,68 @@ class _MyHomePageState extends State<MyHomePage> {
 
       body: Center(
         child: Card(
-        elevation: 20,
+        elevation: 25,
         color: Colors.amber,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
         child: Column(
-          
-
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             //const ElevatedButton(onPressed: (){Navigator.pushNamed(context, '/pages/detail');},);
-             ElevatedButton(
-              onPressed: () {
-                  Navigator.pushNamed(context,'/pages/detail');
-                }, 
-                child: Text("Wa")
+             
+             
+             
+             
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              
+
+
+              Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
               ),
+              alignment: Alignment.bottomLeft,
+              child: ElevatedButton(
+                onPressed: () {
+                    Navigator.pushNamed(context,'/pages/detail');
+                  }, 
+                  child: Text("Details")
+                ),
+              ),
+
+
+
+
+
+              Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+
+                ),
+              alignment: Alignment.bottomRight,  
+              child: ElevatedButton(
+                onPressed: () {
+                    Navigator.pushNamed(context,'/pages/list');
+                  }, 
+                  child: Text("List")
+                ),
+              ),
+
+
+
+             ],),
+
+            SizedBox(
+              width: 100,
+              height: 100,
+             ),
+             
+              
+
             if(_counter==15)
             const Text(
               'Victoria',
@@ -119,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           /*
             if(_counter==15)
-            SizedBox(
+            Container(
               width: 100,
               height: 100,
               child: SvgPicture.asset(
@@ -129,11 +178,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             if(_counter==10)
-            SizedBox(
+            Container(
               width: 100,
               height: 100,
-              child: SvgPicture.asset(
-                'assets/images/derrota.svg',
+              child: Image.asset(
+                'assets/images/derrota.jpg',
                fit: BoxFit.cover,
               ),
             ),*/
@@ -151,7 +200,9 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            Row(children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
               ElevatedButton(onPressed: _incrementCounter, child: const Text('Aumento')),
               ElevatedButton(onPressed: _lessCounter, child: const Text('Disminuir')),
               ElevatedButton(onPressed: _resetCounter, child: const Text('Reset')),
