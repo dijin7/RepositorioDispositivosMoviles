@@ -34,7 +34,7 @@ class List extends StatelessWidget{
                 ),             
                 ListTile(
                   title: Text('Hola, Soy Lista 2'),
-                ),
+                ),  
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),

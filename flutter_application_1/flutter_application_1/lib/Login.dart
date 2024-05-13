@@ -1,10 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/pages/lib/game.dart';
+import 'package:flutter_application_1/pages/lib/rutine.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:flutter_svg/flutter_svg.dart';
 import 'pages/detail.dart';
 import 'pages/list.dart';
+
+// Cosas del proyecto
+import 'pages/lib/lib.dart';
+import 'pages/new/news.dart';
+import 'pages/profile/profile.dart';
+import 'pages/search/search.dart';
 
 
 void main() {
@@ -13,9 +21,20 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+/*
+  late TextEditingController controller;
+  String text = '';
+*/
 
   // This widget is the root of your application.
   @override
+/*
+  void initstate(){
+    super.initstate();
+    controller = TextEditingController(); 
+  }
+*/
+  
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
@@ -32,7 +51,15 @@ class MyApp extends StatelessWidget {
         //'/': (context) => MyHomePage(title: 'wa',),
         '/pages/detail': (context) => NewPage(),
         '/pages/list':(context) => List(),
-        '/main':(context) => MyApp(),
+        '/main':(context) => MyApp(), 
+
+        //cosas proyecto
+        'pages/lib/lib':(context) => Lib(),
+        'pages/new/news':(context) => News(),
+        'pages/profile/profile':(context) => Profiles(),
+        'pages/search/searach':(context) => Searchs(),
+        'pages/lib/game':(context) => Games(),
+        'pages/lib/rutine':(context) => Rutine(),
       } 
 
 
@@ -54,6 +81,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  late TextEditingController controller;
+  String text = '';
+
+  late TextEditingController controller2;
+  String text2 = '';
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -81,6 +115,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     }
 
+    
+
+
+
+
     Widget Addimage(){
       if(_counter >= 15){
         return SvgPicture.asset('assets/images/victoria.svg');
@@ -95,6 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   
   @override
+
+  void initState(){
+    super.initState();
+    controller = TextEditingController(); 
+    controller2 = TextEditingController();
+  }
+
+
   Widget build(BuildContext context) {
 
     return Scaffold(
@@ -107,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
-        title: Text(widget.title),
+        title: Text("Loguin"),
       ),
 
 
@@ -116,15 +163,35 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Card(
         elevation: 25,
-        color: Colors.amber,
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             //const ElevatedButton(onPressed: (){Navigator.pushNamed(context, '/pages/detail');},);
-             
-             
+            Text("Username"),
+
+                  TextField(
+                    controller: controller,
+                    onSubmitted: (String value){
+                      setState(() {
+                        text = controller.text;
+                      });
+                    },
+                  ),
+
+                Text("Password",),
+    
+                  TextField(
+                    controller: controller2,
+                    obscureText: true,
+                    onSubmitted: (String value){
+                      setState(() {
+                        text = controller2.text;
+                      });
+                    },
+                  ),
              
              
              Row(
@@ -132,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
               
 
-
+               
               Container(
               width: 100,
               height: 100,
@@ -141,16 +208,16 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment: Alignment.bottomLeft,
               child: ElevatedButton(
                 onPressed: () {
-                    Navigator.pushNamed(context,'/pages/detail');
+                    Navigator.pushNamed(context,'pages/new/news');
                   }, 
-                  child: Text("Details")
+                  child: Text("Entrar")
                 ),
               ),
 
 
 
-
-
+              
+             
               Container(
               width: 100,
               height: 100,
@@ -165,11 +232,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text("List")
                 ),
               ),
-
-
+              
+              
 
              ],),
-
+              /*
             SizedBox(
               width: 100,
               height: 100,
@@ -212,7 +279,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ElevatedButton(onPressed: _lessCounter, child: const Text('Disminuir')),
               ElevatedButton(onPressed: _resetCounter, child: const Text('Reset')),
             ],)
-
+            */
 
           ],
           ),
