@@ -32,7 +32,7 @@ class _NewsState  extends  State<News>{
       appBar: AppBar
           (title: const Text
             (
-              'Tu Perfil',
+              'Novedades',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),

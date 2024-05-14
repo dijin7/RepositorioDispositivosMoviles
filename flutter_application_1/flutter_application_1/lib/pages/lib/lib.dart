@@ -30,8 +30,12 @@ class _LibState  extends  State<Lib>{
 
     return Scaffold(
       appBar: AppBar
-          (title: Text
-            ('Libreria'),
+          (title: const Text
+            (
+              'Libreria',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
           ),
           backgroundColor: Colors.black,
         body: Column(

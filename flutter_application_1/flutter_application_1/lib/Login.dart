@@ -15,7 +15,12 @@ import 'pages/profile/profile.dart';
 import 'pages/search/search.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Future.delayed(const Duration(seconds: 5));
+  
+
   runApp(const MyApp());
 }
 
@@ -218,20 +223,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
               
              
-              Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-
-                ),
-              alignment: Alignment.bottomRight,  
-              child: ElevatedButton(
-                onPressed: () {
-                    Navigator.pushNamed(context,'/pages/list');
-                  }, 
-                  child: Text("List")
-                ),
-              ),
               
               
 

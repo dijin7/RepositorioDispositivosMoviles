@@ -26,8 +26,12 @@ class _SearchsState  extends  State<Searchs>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar
-          (title: Text
-            ('Busqueda'),
+          (title: const Text
+            (
+              'Busqueda',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
           ), 
         backgroundColor: Colors.black,
         body: Column(

@@ -26,9 +26,9 @@ dev_dependencies:
   flutter_native_splash: ^2.2.4
 
 flutter_native_splash:
-  android: true
   ios: true
   web: true
+  android: true
   background_image: "assets/splashscreen.jpg"
 
   image: "assets/splashscreen.jpg"
