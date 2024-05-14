@@ -1,5 +1,6 @@
 Proyecto de Ignacio Silva Novo
-
+video:
+https://youtu.be/p4AaQpPak2E
 
 Descripción del Proyecto
 El proyecto trata de la creación de una maqueta de una app para entrenar dentro de videojuegos, esto en base a distintas rutinas que te puedan ayudar a mejorar dentro del mismo juego. 
