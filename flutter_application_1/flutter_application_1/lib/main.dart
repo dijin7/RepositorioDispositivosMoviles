@@ -23,21 +23,75 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
 
+  
+
+
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+
+  _MyHomePageState createState(){
+    print(' create state');
+  return _MyHomePageState();
+  }
+
+  //State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  _MyHomePageState(){
+    print('mounted = $mounted');
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    print('llamando a InitState()');
+  }
+
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    print('llamando a didChangedependences()');
+  }
+
+  @override
+  void didUpdateWidget(MyHomePage widget){
+    super.didUpdateWidget(widget);
+    print('llamando a didUpdateWidget()');
+  }
+
+  @override
+  void deactivate(){
+    super.deactivate();
+    print('llamando a desactivate()');
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    print('llamando a dispose()');
+  }
+
+  @override
+  void reassemble() {
+    super.reassemble();
+    print('llamando a reassamble()');
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
+       print('llamando a setState()');
       _counter++;
+      print('|Se sumo +1 al counter|');
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    print('|----------------------------|');
+    print('llamando al build()');
+    print('|----------------------------| \n');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
