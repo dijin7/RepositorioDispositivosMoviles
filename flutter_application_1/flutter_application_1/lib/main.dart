@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/sensor.dart'; 
+import 'package:flutter_application_1/list.dart';
+import 'package:flutter_application_1/detail.dart';
+import 'package:flutter_application_1/gestures.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +19,26 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+
+
+
+      routes:{
+        '/detail': (context) => NewPage(),
+        '/list':(context) => List(),
+        '/main':(context) => MyApp(),
+        '/sensor':(context) => Sensor(),
+        '/gestures':(context) => Gestures()
+      } 
+
+
+
+
+
+
+
+
+
     );
   }
 }
@@ -40,6 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
   _MyHomePageState(){
     print('mounted = $mounted');
   }
+
+  
+
+
 
   @override
   void initState(){
@@ -96,7 +124,56 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
-      ),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader
+              (
+                child: Text('menu')
+              ),
+
+               ListTile(
+                title: Text('Inicio'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/main');
+                },
+              ),
+              ListTile(
+                title: Text('Lista'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/list');
+                },
+              ),
+              ListTile(
+                title: Text('Detalles'),
+                onTap: (){
+                Navigator.pushNamed(context, '/detail');
+                },
+              ),
+              ListTile(
+                title: Text('Sensores'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/sensor');
+                },
+              ),
+              ListTile(
+                title: Text('Gestos'),
+                onTap:() {
+                  Navigator.pushNamed(context, '/gestures');
+                },
+              ),
+
+
+
+
+            ],
+          ),
+        ),
+
+
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
