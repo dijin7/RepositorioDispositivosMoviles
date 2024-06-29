@@ -127,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         drawer: Drawer(
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: EdgeInsets.all(12.3),
             children: [
               DrawerHeader
               (
